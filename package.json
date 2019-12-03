@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node ./dist/index.js",
     "test": "npx jest --verbose --runInBand",
-    "dev": "ts-node --files ./src/index.ts"
+    "dev": "ts-node --files ./src/index.ts",
+    "build": "rm -rf dist && tsc --sourceMap -p ./"
   },
   "keywords": [],
   "author": "",
