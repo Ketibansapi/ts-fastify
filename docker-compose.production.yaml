@@ -1,6 +1,6 @@
 version: '3'
 services:
-  my-project-ts:
+  ts-fastify:
     build: .
     depends_on:
       - mongodb

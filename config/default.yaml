@@ -1,2 +1,2 @@
 db:
-    uri: "mongodb://localhost:27017/vehicles"
+  uri: "mongodb://localhost:27017/vehicles"

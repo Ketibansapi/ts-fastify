@@ -1,2 +1,2 @@
 db:
-    uri: "mongodb://mongodb:27017/vehicles"
+  uri: "mongodb://mongodb:27017/vehicles"
