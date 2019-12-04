@@ -15,6 +15,9 @@ const uuidv4 = require('uuid/v4');
 // create request ids
 const createRequestId = () => uuidv4();
 
+const createServer = (options) => {
+  const { logSeverity } = options;
+
 const server: fastify.FastifyInstance<
   Server,
   IncomingMessage,
@@ -23,9 +26,8 @@ const server: fastify.FastifyInstance<
       ignoreTrailingSlash: true,
       logger: {
           genReqId: createRequestId,
-          level: 'info'}
+          level: logSeverity}
 });
-
 
 server.register(fastifyBlipp);
 server.register(db, { uri: "mongodb://localhost:27017/vehicles" });
@@ -53,3 +55,4 @@ process.on("unhandledRejection", error => {
 });
 
 start();
+}
