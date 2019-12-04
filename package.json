@@ -22,6 +22,7 @@
     "fastify-autoload": "^1.0.0",
     "fastify-blipp": "^2.1.0",
     "fastify-plugin": "^1.6.0",
+    "fastify-swagger": "^2.4.0",
     "jest": "^24.9.0",
     "mongoose": "^5.7.13",
     "nconf": "^0.10.0",

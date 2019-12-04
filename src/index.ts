@@ -15,6 +15,7 @@ import db from "./modules/db";
 
 // INITIALIZE 
 const uuidv4 = require('uuid/v4');
+// const swagger = require('./config/swagger');
 // const path = require('path');
 // const AutoLoad = require('fastify-autoload');
 
@@ -31,7 +32,7 @@ const server: fastify.FastifyInstance<
   ServerResponse
 > = fastify({
       ignoreTrailingSlash: true,
-      logger: true 
+      logger: true,
       //     genReqId: createRequestId,
       //     level: logSeverity
 });

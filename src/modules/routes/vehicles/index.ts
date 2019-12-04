@@ -22,6 +22,17 @@ export default fp(async (server, opts, next) => {
     }
   });
 
+  // ROUTES GET All VEHICLES
+  server.get("/vehicles", {}, async (request, reply) => {
+    try {
+      const vehicle = await server.db.models.Vehicle.find();
+      return vehicle
+    } catch (error) {
+      request.log.error(error);
+      return reply.send(400);
+    }
+  });
+
 // ROUTES POST
   server.post("/vehicles", {}, async (request, reply) => {
     try {
