@@ -4,6 +4,7 @@ import { Server, IncomingMessage, ServerResponse } from "http";
 import statusRoutes from "./modules/routes/status";
 import vehiclesRoutes from "./modules/routes/vehicles";
 import db from "./modules/db";
+import * as config from "config";
 
 const server: fastify.FastifyInstance<
   Server,
@@ -14,6 +15,7 @@ const server: fastify.FastifyInstance<
 server.register(fastifyBlipp);
 server.register(statusRoutes);
 server.register(db, { uri: "mongodb://localhost:27017/vehicles" });
+server.register(db, config.get('db'));
 server.register(vehiclesRoutes);
 
 
