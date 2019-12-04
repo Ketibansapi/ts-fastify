@@ -18,6 +18,7 @@ const server: fastify.FastifyInstance<
 
 server.register(fastifyBlipp);
 server.register(db, { uri: "mongodb://localhost:27017/vehicles" });
+server.register(db, config.get('db'));
 server.register(vehiclesRoutes);
 server.register(statusRoutes);
 server.register(errorThrowerRoutes);
