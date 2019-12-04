@@ -1,20 +1,31 @@
 import * as sourceMapSupport from "source-map-support";
 sourceMapSupport.install();
-
 import * as fastify from "fastify";
 import * as fastifyBlipp from "fastify-blipp";
 import { Server, IncomingMessage, ServerResponse } from "http";
-import * as config from "config";
+// import * as config from "config";
 import statusRoutes from "./modules/routes/status";
 import vehiclesRoutes from "./modules/routes/vehicles";
 import errorThrowerRoutes from "./modules/routes/error-thrower";
 import db from "./modules/db";
+const path = require('path');
+const AutoLoad = require('fastify-autoload');
+const uuidv4 = require('uuid/v4');
+
+// create request ids
+const createRequestId = () => uuidv4();
 
 const server: fastify.FastifyInstance<
   Server,
   IncomingMessage,
   ServerResponse
-> = fastify({logger:true});
+> = fastify({
+      ignoreTrailingSlash: true,
+      logger: {
+          genReqId: createRequestId,
+          level: 'info'}
+});
+
 
 server.register(fastifyBlipp);
 server.register(db, { uri: "mongodb://localhost:27017/vehicles" });
