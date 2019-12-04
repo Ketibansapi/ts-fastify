@@ -1,5 +1,7 @@
+// IMPORT PLUGIN
 import * as fp from "fastify-plugin";
 
+// ROUTES GET
 export default fp(async (server, opts, next) => {
   server.get("/vehicles/:id", {}, async (request, reply) => {
     try {
@@ -20,6 +22,7 @@ export default fp(async (server, opts, next) => {
     }
   });
 
+// ROUTES POST
   server.post("/vehicles", {}, async (request, reply) => {
     try {
       const { Vehicle } = server.db.models;

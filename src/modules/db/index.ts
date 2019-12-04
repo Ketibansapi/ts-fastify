@@ -1,3 +1,7 @@
+/* 
+  Uses to export the database from db to API
+*/
+
 import { Model } from "mongoose";
 import * as Mongoose from "mongoose";
 import { VehicleModel, Vehicle } from "./models/vehicle";

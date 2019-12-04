@@ -1,3 +1,6 @@
+/* 
+  Uses only to get HTTP status from web server
+*/
 import * as fp from "fastify-plugin";
 
 export default fp(async (server, opts, next) => {

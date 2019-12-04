@@ -1,3 +1,7 @@
+/* 
+  Uses for initialize schemas nad models
+*/
+
 import { Document, Schema, Model, model } from "mongoose";
 
 export interface VehicleDocument extends Document {

@@ -1,3 +1,7 @@
+/* 
+  Uses to throw error on the docker compose up CLI, still maintenance
+*/
+
 import * as fp from "fastify-plugin";
 
 export default fp(async (server, opts, next) => {
