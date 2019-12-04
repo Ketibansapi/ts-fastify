@@ -7,7 +7,7 @@ import { Server, IncomingMessage, ServerResponse } from "http";
 import * as config from "config";
 import statusRoutes from "./modules/routes/status";
 import vehiclesRoutes from "./modules/routes/vehicles";
-// import errorThrowerRoutes from "./modules/routes/error-thrower";
+import errorThrowerRoutes from "./modules/routes/error-thrower";
 import db from "./modules/db";
 
 const server: fastify.FastifyInstance<
@@ -20,7 +20,7 @@ server.register(fastifyBlipp);
 server.register(db, { uri: "mongodb://localhost:27017/vehicles" });
 server.register(vehiclesRoutes);
 server.register(statusRoutes);
-// server.register(errorThrowerRoutes);
+server.register(errorThrowerRoutes);
 
 const start = async () => {
   try {
